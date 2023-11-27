@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,400i,500,600,700,800,800i,900&display=swap');
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+
+body
+{
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(rgba(79, 51, 176, 1), rgba(210,53,165,1));
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.container
+{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+.calculator {
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #000; 
+}
+
+.theme-toggler
+{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    color: #333; /*Cambia el color del texto o íconos SVG dentro del contenedor*/
+    cursor: pointer;
+    z-index: 1;
+}
+
+.theme-toggler.active
+{
+    color: #fff;
+}
+
+.theme-toggler.active::before
+{
+    /*background-color: #071115;*/
+    position: relative;
+}
+
+.theme-toggler::before
+{
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    /*background-color: #fff;*/
+    z-index: -1;
+}
+
+.toggler-icon {
+    width: 25px;
+    height: 25px;
+}
+
+
+#display
+{
+    margin: 0 10px;
+    height: 120px;
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    margin-top: 50px;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+}
+
+#display::-webkit-scrollbar {
+    display: block;
+    height: 3px;
+}
+
+button {
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button#equal {
+    height: 130px;
+}
+
+/* Tema claro*/
+
+.calculator {
+    background-color: #fff;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.calculator #display {
+    color: #2d4247;
+    border-radius: 10px;
+    padding-right: 5px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 2px rgb(57, 86, 94), 0 0 3px rgb(57, 86, 94);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.calculator button#clear {
+    background: #ffd5d8;
+    color: #fc4552;
+}
+.calculator button#clear:hover {
+    color: #fc4552;
+    box-shadow: 0 0 3px #fc4552, 0 0 5px #fc4552;
+}
+
+.calculator button.btn-number {
+    background-color: #c3eaff;
+    color: #1db0ff;
+}
+.calculator button.btn-number:hover
+{
+    color: #5bc5ff;
+    box-shadow: 0 0 3px #5bc5ff, 0 0 5px #5bc5ff;
+}
+
+.calculator button.btn-operator {
+    background-color: #ffd0fd;
+    color: #fd51f7;
+}
+.calculator button.btn-operator:hover {
+    color: #fc7ff8;
+    box-shadow: 0 0 3px #fc7ff8, 0 0 5px #fc7ff8;
+}
+
+.calculator button.btn-equal {
+    background-color: #adf9e7;
+    color: #00b48a;
+}
+.calculator button.btn-equal:hover {
+    color: #36e7be;
+    box-shadow: 0 0 3px #36e7be, 0 0 5px #36e7be;
+}
+/* Tema oscuro*/
+
+
+.calculator.dark {
+    background-color: rgba(7, 17, 21, 0.5);
+}
+
+.calculator.dark #display {
+    color: #e2eeff;
+    border-radius: 10px;
+    padding-right: 5px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 3px rgba(248, 250, 253, 0.5), 0 0 10px rgb(248, 250, 253, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.calculator.dark button#clear {
+    background: #2d191e;
+    color: #bd3740;
+    box-shadow: 0 0 3px #fd4854, 0 0 5px #fd4854;
+}
+.calculator.dark button#clear:hover {
+    box-shadow: 0 0 5px #fd4854, 0 0 10px #fd4854;
+    color: #fd4854; 
+}
+
+.calculator.dark button.btn-number {
+    background-color: #1b2f38;
+    color: #f8fafd;
+    box-shadow: 0 0 3px #3ee8ff, 0 0 5px #3ee8ff;
+}
+.calculator.dark button.btn-number:hover {
+    box-shadow: 0 0 5px #3ee8ff, 0 0 10px #3ee8ff;
+    color: #3ee8ff;
+}
+
+.calculator.dark button.btn-operator {
+    background-color: #2e1f39;
+    color: #aa00a4;
+    box-shadow: 0 0 3px #aa00a4, 0 0 5px #aa00a4;
+}
+
+.calculator.dark button.btn-operator:hover {
+    box-shadow: 0 0 5px #fc00f3, 0 0 10px #fc00f3;
+    color: #fc00f3; 
+}
+
+.calculator.dark button.btn-equal {
+    background-color: #223323;
+    color: #adf9e7;
+    box-shadow: 0 0 3px #3df849, 0 0 5px #3df849;
+}
+.calculator.dark button.btn-equal:hover {
+    box-shadow: 0 0 5px #3df849, 0 0 10px #3df849;
+    color: #3df849; 
+}
